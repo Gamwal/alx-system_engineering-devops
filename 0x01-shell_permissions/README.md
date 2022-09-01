@@ -1,1 +1,1 @@
-sell_permissions
+shell_permissions
