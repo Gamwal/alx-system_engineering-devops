@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f,d -empty -print | xargs -n 1 basename
+find . -type f,d -empty -printf '%f\n'
