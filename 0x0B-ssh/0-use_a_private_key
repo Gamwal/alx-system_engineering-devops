@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that uses ssh to connect to your server
+ssh-copy-id -i ~/.ssh/school ubuntu@'54.174.110.100'
+ssh ubuntu@'54.174.110.100'

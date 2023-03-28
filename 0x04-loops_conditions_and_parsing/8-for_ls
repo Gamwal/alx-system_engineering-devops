@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# script that displays the current dir in a list format
+for item in *; do
+	echo "$item" | cut -d "-" -f2
+done
