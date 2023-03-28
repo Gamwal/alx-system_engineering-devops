@@ -1,18 +1,22 @@
 # client configuration file with puppet
-file_line {'ssh_config':
+file {'ssh_config':
   ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => 'Host *',
 }
 
-file_line {'ssh_config':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAuthentication no',
+exec {'ssh_config':
+  path     => '/ssh_config'
+  command  => 'echo "Host *" >> ssh_config',
+  provider => shell,
 }
 
-file_line {'ssh_config':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => 'IdentifyFile ~/.ssh/school',
+exec {'ssh_config':
+  path     => '/ssh_config'
+  command  => 'echo "PasswordAuthentication no" >> ssh_config',
+  provider => shell,
+}
+
+exec {'ssh_config':
+  path     => '/ssh_config'
+  command  => 'echo "IdentifyFile ~/.ssh/school" >> ssh_config',
+  provider => shell,
 }
