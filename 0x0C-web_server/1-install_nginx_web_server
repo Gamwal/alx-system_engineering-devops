@@ -5,3 +5,5 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo apt-get -y install curl
 sudo mkdir -p /var/www/html
+sudo touch /var/www/html/index.html
+echo "Hello World!" | tee /var/www/html/index.html
