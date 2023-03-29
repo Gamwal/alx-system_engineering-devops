@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # Bash script to configure Nginx server
+
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
+
 sudo apt-get -y install curl
 sudo mkdir -p /var/www/html
 sudo touch /var/www/html/index.html
 echo "Hello World!" | sudo tee /var/www/html/index.html
+
+sudo systemctl reload nginx
