@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Bash Script to Configure Nginx server so that /redirect_me is redirecting to another page.
+
+apt-get update
+apt-get -y install nginx
+
+mkdir -p /var/www/html
+touch /var/www/html/index.html /var/www/html/custom_404.html
+echo "Hello World!" >  /var/www/html/index.html
+echo $"Ceci n'est pas une page\n" > /var/www/html/custom_404.html
+
+new_string="server_name _;\n\trewrite ^\/redirect_me fast.com permanent; \n\n\terror_page 404 \/custom_404.html\n\tlocation = \/custom_404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-available/default
+
+service nginx restart
