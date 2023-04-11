@@ -19,12 +19,6 @@ printf %s "server {
 
     server_name _;
 
-    error_page 404 /custom_404.html;
-    location = /custom_404.html {
-            root /var/www/html;
-            internal;
-    }
-
     location / {
         add_header X-Served-By \$hostname;
         try_files \$uri \$uri/ =404;
