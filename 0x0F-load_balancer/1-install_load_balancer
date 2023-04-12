@@ -39,4 +39,4 @@ listen airbnb_clone
 	server 132396-web-02 100.25.31.41:80 check
 " >> /etc/haproxy/haproxy.cfg
 
-service haproxy start
+service haproxy restart
