@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install my load balancer 
 
-apt-get -y install --no-install-recommends software-properties-common
+apt-get -y install software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
 apt-get -y install haproxy=2.0.\*
@@ -35,8 +35,8 @@ listen airbnb_clone
 	balance roundrobin
 	option httpclose
 	option forwardfor
-	server web-01 54.84.249.158:80 check
-	server web-02 100.25.31.41:80 check
+	server 132396-web-01 52.91.127.215:80 check
+	server 132396-web-02 100.25.152.92:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
