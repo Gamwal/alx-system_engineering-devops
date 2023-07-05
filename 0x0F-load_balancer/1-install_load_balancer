@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install your load balancer 
+# Install my load balancer 
 
 apt-get -y install --no-install-recommends software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
