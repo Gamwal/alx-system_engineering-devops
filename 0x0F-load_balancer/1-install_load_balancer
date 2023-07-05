@@ -35,8 +35,8 @@ listen airbnb_clone
 	balance roundrobin
 	option httpclose
 	option forwardfor
-	server 132396-web-01 54.84.249.158:80 check
-	server 132396-web-02 100.25.31.41:80 check
+	server web-01 54.84.249.158:80 check
+	server web-02 100.25.31.41:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
