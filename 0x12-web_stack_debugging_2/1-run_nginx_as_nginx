@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-# Script to execute command as a different user
+# Script to correct nginx config
 
-su $1
-whoami
-exit
+sudo service apache2 stop
+sudo pkill apache2
+
+sudo sed -i '1s/^/listen 8080 default_server;\n/' /etc/nginx/nginx.conf
+sudo sed -i '1s/^/user nginx;\n/' /etc/nginx/nginx.conf
+sudo service nginx restart
