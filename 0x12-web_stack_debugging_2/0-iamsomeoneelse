@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Script to execute command as a different user
 
-su -c "$1"
-whoami
+sudo -u "$1" 'whoami'
 exit
