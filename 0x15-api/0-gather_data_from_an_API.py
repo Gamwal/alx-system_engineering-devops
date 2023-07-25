@@ -33,7 +33,7 @@ def make_requests(num):
 
     for i in req.json():
         if i.get('completed') is True:
-            print("\t{}".format(i.get('title')))
+            print("\t {}".format(i.get('title')))
 
 
 if __name__ == "__main__":
