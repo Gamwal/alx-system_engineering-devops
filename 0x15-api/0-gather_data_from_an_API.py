@@ -12,7 +12,7 @@ def make_requests(num):
     Args:
         num: The employee ID
     """
-    
+
     if len(sys.argv) != 2:
         return
 
