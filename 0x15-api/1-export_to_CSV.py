@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to gather data from an API"""
+"""Script to gather data from an API and export to CSV"""
 
 import requests
 import sys
