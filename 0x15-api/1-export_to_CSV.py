@@ -29,12 +29,11 @@ def make_requests(num):
     filename = "{}.csv".format(num)
 
     with open(filename, 'w') as f:
-        writer = csv.writer(f, quotechar='"',)
         for i in req.json():
             data = [i.get('userId'), req1.json().get('username'),
                     i.get('completed'), i.get('title')]
-            print(data)
-            writer.writerow(data)
+            data = f'"{data[0]}","{data[1]}","{data[2]}","{data[3]}"\n'
+            f.write(data)
 
 
 if __name__ == "__main__":
