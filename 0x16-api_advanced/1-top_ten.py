@@ -16,7 +16,7 @@ def top_ten(subreddit):
         subreddit (str): The subreddit to be queried
 
     Returns:
-        str: The number of total subscriber to the subreddit
+        str: prints the titles
              None if not a valid subreddit
     """
 
