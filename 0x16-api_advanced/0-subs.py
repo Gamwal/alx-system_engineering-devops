@@ -16,11 +16,15 @@ def number_of_subscribers(subreddit):
 
     Returns:
         int: The number of total subscriber to the subreddit
+             0 if not a valid subreddit
     """
     base_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     response = requests.get(base_url)
-    no_of_subscribers = response.json().get('data').get('subscribers')
-    return no_of_subscribers
+    try:
+        no_of_subscribers = response.json().get('data').get('subscribers')
+        return no_of_subscribers
+    except Exception as e:
+        return 0
 
 
 if __name__ == '__main__':
