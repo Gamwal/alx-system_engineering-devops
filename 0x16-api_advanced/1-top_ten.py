@@ -27,7 +27,7 @@ def top_ten(subreddit):
         for i in response.json().get('data').get('children'):
             print(i.get('data').get('title'))
     except Exception as e:
-        return None
+        print(None)
 
 
 if __name__ == '__main__':
