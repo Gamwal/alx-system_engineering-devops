@@ -28,6 +28,7 @@ def top_ten(subreddit):
             print(i.get('data').get('title'))
     except Exception as e:
         print(None)
+        return None
 
 
 if __name__ == '__main__':
