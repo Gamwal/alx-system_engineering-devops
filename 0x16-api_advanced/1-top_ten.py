@@ -20,9 +20,9 @@ def top_ten(subreddit):
              None if not a valid subreddit
     """
 
-    base_url = "https://www.reddit.com/r/{}/top.json?limit=10"\
+    base_url = "https://www.reddit.com/r/{}/hot.json?limit=10"\
         .format(subreddit)
-    response = requests.get(base_url)
+    response = requests.get(base_url, allow_redirects=False)
     try:
         for i in response.json().get('data').get('children'):
             print(i.get('data').get('title'))
