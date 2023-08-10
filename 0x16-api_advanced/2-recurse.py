@@ -28,7 +28,7 @@ def recurse(subreddit, hot_list=[], after=None):
     response = requests.get(base_url, headers=headers,
                             params=params, allow_redirects=False)
 
-    if response.status_code == 200:
+    try:
         response_list = response.json().get('data').get('children')
         hot_list.extend([i.get('data').get('title') for i in response_list])
 
@@ -37,10 +37,11 @@ def recurse(subreddit, hot_list=[], after=None):
         if after:
             return recurse(subreddit, hot_list, after)
         else:
+            print(len(hot_list))
             return hot_list
-    else:
+    except Exception as e:
         return None
 
 
 if __name__ == '__main__':
-    recurse(subreddit=None)
+    recurse(subreddit='Programming')
