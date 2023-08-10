@@ -37,7 +37,6 @@ def recurse(subreddit, hot_list=[], after=None):
         if after:
             return recurse(subreddit, hot_list, after)
         else:
-            print(len(hot_list))
             return hot_list
     except Exception as e:
         return None
